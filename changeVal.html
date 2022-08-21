@@ -1,0 +1,57 @@
+<link
+  rel="stylesheet"
+  href="https://cdnjs.cloudflare.com/ajax/libs/twitter-bootstrap/3.3.7/css/bootstrap.min.css"
+/>
+<html>
+  <head>
+    <title>Dropdown Select2</title>
+    <!-- Bootstrap CSS -->
+    <link
+      rel="stylesheet"
+      href="https://cdnjs.cloudflare.com/ajax/libs/twitter-bootstrap/3.3.7/css/bootstrap.min.css"
+    />
+    <!-- Select2 CSS -->
+    <link
+      href="https://cdn.jsdelivr.net/npm/select2@4.1.0-rc.0/dist/css/select2.min.css"
+      rel="stylesheet"
+    />
+  </head>
+  <body>
+    <div class="container">
+      <div class="row">
+        <div class="col-md-6">
+          <label>Single Change</label>
+          <select id="single" class="js-states form-control">
+            <option value="1">Java</option>
+            <option value="2">Javascript</option>
+          </select>
+        </div>
+        <div class="col-md-6">
+          <label>Multiple Select2</label>
+          <select id="multiple" class="js-states form-control" multiple>
+            <option value="1">Java</option>
+            <option value="2">Javascript</option>
+            <option value="3">PHP</option>
+            <option value="4">Visual Basic</option>
+          </select>
+        </div>
+      </div>
+    </div>
+    <!-- jQuery -->
+    <script src="https://cdnjs.cloudflare.com/ajax/libs/jquery/3.2.1/jquery.min.js"></script>
+    <!-- Select2 -->
+    <script src="https://cdn.jsdelivr.net/npm/select2@4.1.0-rc.0/dist/js/select2.min.js"></script>
+
+    <script>
+      $("#single").val("2"); // Select the option with a value of '1'
+      $("#single").trigger("change"); // Notify any JS components that the value changed
+
+      $("#multiple").select2({
+        placeholder: "Select a programming language",
+        allowClear: true,
+      });
+      $("#multiple").val(["1", "2"]);
+      $("#multiple").trigger("change");
+    </script>
+  </body>
+</html>

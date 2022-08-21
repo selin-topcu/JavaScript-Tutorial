@@ -1,0 +1,52 @@
+<link
+  rel="stylesheet"
+  href="https://cdnjs.cloudflare.com/ajax/libs/twitter-bootstrap/3.3.7/css/bootstrap.min.css"
+/>
+<html>
+  <head>
+    <title>Dropdown Select2</title>
+    <!-- Bootstrap CSS -->
+    <link
+      rel="stylesheet"
+      href="https://cdnjs.cloudflare.com/ajax/libs/twitter-bootstrap/3.3.7/css/bootstrap.min.css"
+    />
+    <!-- Select2 CSS -->
+    <link
+      href="https://cdn.jsdelivr.net/npm/select2@4.1.0-rc.0/dist/css/select2.min.css"
+      rel="stylesheet"
+    />
+  </head>
+  <body>
+    <div class="container">
+      <div class="row">
+        <div class="col-md-6">
+          <label>Ajax</label>
+          <select id="single" class="js-states form-control">
+            <option>Java</option>
+            <option>Javascript</option>
+          </select>
+        </div>
+      </div>
+    </div>
+    <!-- jQuery -->
+    <script src="https://cdnjs.cloudflare.com/ajax/libs/jquery/3.2.1/jquery.min.js"></script>
+    <!-- Select2 -->
+    <script src="https://cdn.jsdelivr.net/npm/select2@4.1.0-rc.0/dist/js/select2.min.js"></script>
+
+    <script>
+      var data = {
+        id: 1,
+        text: "Barn owl",
+      };
+
+      if ($("#single").find("option[value='" + data.id + "']").length) {
+        $("#single").val(data.id).trigger("change");
+      } else {
+        // Create a DOM Option and pre-select by default
+        var newOption = new Option(data.text, data.id, true, true);
+        // Append it to the select
+        $("#single").append(newOption).trigger("change");
+      }
+    </script>
+  </body>
+</html>

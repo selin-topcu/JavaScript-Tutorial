@@ -1,0 +1,70 @@
+<link
+  rel="stylesheet"
+  href="https://cdnjs.cloudflare.com/ajax/libs/twitter-bootstrap/3.3.7/css/bootstrap.min.css"
+/>
+<html>
+  <head>
+    <title>Disable Select2</title>
+    <!-- Bootstrap CSS -->
+    <link
+      rel="stylesheet"
+      href="https://cdnjs.cloudflare.com/ajax/libs/twitter-bootstrap/3.3.7/css/bootstrap.min.css"
+    />
+    <!-- Select2 CSS -->
+    <link
+      href="https://cdn.jsdelivr.net/npm/select2@4.1.0-rc.0/dist/css/select2.min.css"
+      rel="stylesheet"
+    />
+  </head>
+  <body>
+    <div class="container">
+      <div class="row">
+        <div class="col-md-6">
+          <label>Multiple Select2</label>
+          <select
+            id="js-example-disabled-multi"
+            class="js-states form-control"
+            multiple
+          >
+            <option>Java</option>
+            <option>Javascript</option>
+            <option>PHP</option>
+            <option>Visual Basic</option>
+          </select>
+          <button
+            type="button"
+            id="js-programmatic-disable"
+            class="btn btn-secondary"
+          >
+            Disable</button
+          ><button
+            type="button"
+            id="js-programmatic-enable"
+            class="btn btn-secondary"
+          >
+            Enable
+          </button>
+        </div>
+      </div>
+    </div>
+    <!-- jQuery -->
+    <script src="https://cdnjs.cloudflare.com/ajax/libs/jquery/3.2.1/jquery.min.js"></script>
+    <!-- Select2 -->
+    <script src="https://cdn.jsdelivr.net/npm/select2@4.1.0-rc.0/dist/js/select2.min.js"></script>
+
+    <script>
+      $("#js-example-disabled").select2();
+      $("#js-example-disabled-multi").select2();
+
+      $("#js-programmatic-enable").on("click", function () {
+        $("#js-example-disabled").prop("disabled", false);
+        $("#js-example-disabled-multi").prop("disabled", false);
+      });
+
+      $("#js-programmatic-disable").on("click", function () {
+        $("#js-example-disabled").prop("disabled", true);
+        $("#js-example-disabled-multi").prop("disabled", true);
+      });
+    </script>
+  </body>
+</html>
