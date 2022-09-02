@@ -1,0 +1,92 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta http-equiv="X-UA-Compatible" content="IE=edge">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Document</title>
+    <script src="https://cdnjs.cloudflare.com/ajax/libs/jquery/3.6.1/jquery.min.js" integrity="sha512-aVKKRRi/Q/YV+4mjoKBsE4x3H+BkegoM/em46NNlCqNTmUYADjBbeNefNxYV7giUp0VxICtqdrbqU7iVaeZNXA==" crossorigin="anonymous" referrerpolicy="no-referrer"></script>
+
+</head>
+<body>
+    <p id="hide">Paragraph click - hide</p>
+    <p class="result">Paragraph result</p>
+    <ul><li>First Item 1</li><li>Item 2</li><li>Item 3</li></ul>
+    <ul><li>Second Item 1</li><li>Item 2</li><li>Item 3</li></ul>
+    <p href="#">Href hide</p>
+    <p href="#">Href hide</p>
+    <a target="_blank">Target Blank hide</p>
+    <a target="_parent">Target Parent hide</p>
+    <table border="1">
+        <tr>
+            <td>First</td>
+            <td>Second</td>
+        </tr>
+        <tr>
+            <td>A</td>
+            <td>B</td>
+        </tr>
+        <tr>
+            <td>C</td>
+            <td>D</td>
+        </tr>
+        <tr>
+            <td>E</td>
+            <td>F</td>
+        </tr>
+    </table>
+    <p>Change color</p>
+    <button id="all-hide">All - hide</button>
+    <button class="button-result">Result - hide</button>
+    <button class="first-hide">First - hide</button>
+    <button class="first-ul-hide">First Ul - hide</button>
+    <button class="first-ul-li-hide">First Ul li - hide</button>
+    <button class="first-ul-li-hide2">First and Second Ul li - hide</button>
+    <button class="href-hide">Href - hide</button>
+    <button class="target-hide">Target Blank - hide</button>
+    <button class="table-color">Table - Color</button>
+    <button class="text-color">Text - Color</button>
+    <button class="not-text-color">Item 2 Not - Text - Color</button>
+    <script>
+        // $(document).ready(function(){
+        $(function(){
+            $("#hide").click(function(){
+                $(this).hide();
+            })
+            $("#all-hide").click(function(){
+                $("*").hide();
+            })
+            $(".button-result").click(function(){
+                $("p.result").hide()
+            })
+            $(".first-hide").click(function(){
+                $("p:first").hide()
+            })
+            $(".first-ul-hide").click(function(){
+                $("ul:first").hide()
+            })
+            $(".first-ul-li-hide").click(function(){
+                $("ul li:first").hide()
+            })
+            $(".first-ul-li-hide2").click(function(){
+                $("ul li:first-child").hide()
+            })
+            $(".href-hide").click(function(){
+                $("[href]").hide()
+            })
+            $(".target-hide").click(function(){
+                $("a[target='_blank']").hide()
+            })
+            $(".table-color").click(function(){
+                $("tr:odd").css("background-color","blue") //tr:even
+            })
+            $(".text-color").click(function(){
+                $("p:contains(Change)").css("background-color","red") //tr:even
+            })
+            $(".not-text-color").click(function(){
+                $("li:not(':contains(Item 2)')").css("background-color","red") //tr:even
+            })
+        })
+    </script>
+</body>
+</html>
